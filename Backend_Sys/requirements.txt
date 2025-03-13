@@ -1,0 +1,12 @@
+numpy
+pandas
+opencv-python
+tensorflow
+keras
+streamlit
+Mysql
+plotly
+flask
+twilio
+python-dotenv
+flask-cors

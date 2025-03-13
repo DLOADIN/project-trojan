@@ -1,0 +1,46 @@
+numpy
+pandas
+opencv-python
+tensorflow
+keras
+# streamlit
+Mysql
+plotly
+flask
+twilio
+python-dotenv
+flask-cors
+
+# Run (export DISPLAY=:0)
+# Install Xming and xclock
+# Install Ubuntu
+# logincredentials( Username = admin, Password = Password )
+#   147  export DISPLAY=:0
+#   148  xclock
+#   149  sudo apt-install x11-apps
+#   150  sudo apt install x11-apps
+#   151  apt install x11-apps
+#   152  sudo dpkg --configure -a
+#   153  sudo apt install x11-apps
+#   154  clear
+#   155  xclock
+#   156  pip list
+#   157  clear
+#   158  python3 -m env
+#   159  python3 -m venv umugwegwe
+#   160  python -m venv umugwegwe
+#   161  apt install python3.12-venv
+#   162  clear
+#   163  python -m venv umugwegwe
+#   164  python3 -m venv umugwegwe
+#   165  source umugwegwe/bin/activate
+#   166  pip install -r requirements.txt
+#   167  python3 camera.py
+#   168  pip3 install opencv-python
+#   169  pip install opencv-python
+#   170  python3 camera.py
+#   171  pip3 install keras
+#   172  pip install keras
+#   173  python3 camera.py
+#   174  pip install tensorflow
+#   175  python3 camera.py
