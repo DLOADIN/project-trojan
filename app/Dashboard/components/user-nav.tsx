@@ -24,7 +24,7 @@ export function UserNav() {
         localStorage.removeItem('user'); // Example: Remove user data from localStorage
 
         router.push('../'); 
-        window.history.replaceState(null, '', '../Login'); // Prevent going back
+        window.history.replaceState(null, '', '../Login'); 
       } else {
         console.error('Logout failed:', response.statusText);
       }

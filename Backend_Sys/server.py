@@ -115,8 +115,6 @@ def login():
         cursor.close()
         conn.close()
 
-# Get current user endpoint
-@app.route('/get_current_user', methods=['GET'])
 @app.route('/get_current_user', methods=['GET'])
 def get_current_user():
     user = check_session()
