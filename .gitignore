@@ -47,6 +47,7 @@ next-env.d.ts
 /myenv/
 
 /Backend_Sys/model_weights.h5
+/Backend_Sys/server.py
 /Backend_Sys/.ipynb_checkpoints/
 /Backend_Sys/.env/
 /Backend_Sys/__pycache__/
