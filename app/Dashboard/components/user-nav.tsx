@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
-
+import { useRouter } from "next/navigation"; 
 const date = new Date();
 const TodayDate = date.toLocaleString('default', { month: 'short', day: 'numeric', year: 'numeric' });
 
@@ -10,23 +9,35 @@ export function UserNav() {
 
   const handleLogout = async () => {
     try {
+      const sessionToken = localStorage.getItem('sessionToken');
+      console.log('Session token:', sessionToken);
+
+      if (!sessionToken) {
+        console.error('No session token found');
+        return;
+      }
+
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': sessionToken,
+      };
+      console.log('Headers:', headers);
+
       const response = await fetch('http://localhost:5000/logout', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': localStorage.getItem('sessionToken') ?? '' // Include the session token
-        },
-        credentials: 'include', // Include cookies if using session-based authentication
+        headers,
+        credentials: 'include',
       });
 
       if (response.ok) {
-        localStorage.removeItem('sessionToken'); // Example: Remove session token from localStorage
-        localStorage.removeItem('user'); // Example: Remove user data from localStorage
-
-        router.push('../'); 
-        window.history.replaceState(null, '', '../Login'); 
+        const data = await response.json();
+        console.log('Logout successful:', data);
+        localStorage.removeItem('sessionToken');
+        localStorage.removeItem('user');
+        router.push('../Login'); 
       } else {
-        console.error('Logout failed:', response.statusText);
+        const errorData = await response.json();
+        console.error('Logout failed:', errorData);
       }
     } catch (error) {
       console.error('Error during logout:', error);
